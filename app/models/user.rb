@@ -8,8 +8,11 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
-  validates :first_name,length: { minimum: 2 }, format: { with: /\A(?=.*[a-z])[a-z\d]+\Z/i }
-  validates :last_name, length: { minimum: 2 }, format: { with: /\A(?=.*[a-z])[a-z\d]+\Z/i }
+  validates :first_name,length: { minimum: 2 }, format: { with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/ }
+  validates :last_name, length: { minimum: 2 }, format: { with: /\A[a-zA-Z]+\z/ }
+
+  # Regex for alphanumeric, that doesnt begin with a number. Possibly use for username
+  # /\A(?=.*[a-z])[a-z\d]+\Z/i
 
   validates_presence_of :first_name,
                         :last_name,
