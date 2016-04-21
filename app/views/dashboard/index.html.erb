@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h1>App Name</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <h2 class="text-center">Icon</h2>
+      <div class="col-md-6">
+        <p class="text-center">IMAGE PREVIEW</p>
+      </div>
+      <div class="col-md-6">
+        <%= form_for current_user do |f| %>
+        <div class="form-group">
+          <%= f.label :icon %><br>
+          <%= f.file_field :icon, class: "form-control" %>
+        </div>
+        <% end %>
+        <p>This image will be used as the app icon. Please make sure the uploaded image is a square, or else the image will be distorted.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <h2 class="text-center">Header</h2>
+      <div class="col-md-6">
+        <p class="text-center">IMAGE PREVIEW</p>
+      </div>
+      <div class="col-md-6">
+        <%= form_for current_user do |f| %>
+        <div class="form-group">
+          <%= f.label :icon %><br>
+          <%= f.file_field :icon, class: "form-control" %>
+        </div>
+        <% end %>
+        <p>This image will be used as the logo in the app.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>Background Color</p>
+    <p>Font Color</p>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <h2 class="text-center">Splash Screen</h2>
+      <div class="col-md-6">
+        <p class="text-center">IMAGE PREVIEW</p>
+      </div>
+      <div class="col-md-6">
+        <%= form_for current_user do |f| %>
+        <div class="form-group">
+          <%= f.label :icon %><br>
+          <%= f.file_field :icon, class: "form-control" %>
+        </div>
+        <% end %>
+        <p>This image will be used as the loading screen in the app.</p>
+      </div>
+    </div>
+  </div>
+</div>
