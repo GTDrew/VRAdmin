@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.minicolors
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+
+$( document ).ready(function() {
+  $('.bg-color').minicolors();
+  $('.font-color').minicolors();
+});

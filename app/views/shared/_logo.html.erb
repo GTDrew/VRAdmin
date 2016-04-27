@@ -1,7 +1,5 @@
 <% if current_user %>
-    <!-- Comment out until home_path is built  -->
-    <%#= link_to "VR Admin", home_path, class: "navbar-brand" %>
-    <%= link_to "VR Admin", root_path, class: "navbar-brand" %>
+    <%= link_to "VR Admin", dashboard_index_path, class: "navbar-brand" %>
 <% else %>
     <%= link_to "VR Admin", root_path, class: "navbar-brand" %>
 <% end %>

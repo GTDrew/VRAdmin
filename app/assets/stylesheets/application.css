@@ -11,12 +11,20 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require jquery.minicolors
  *= require_tree .
  *= require_self
  */
 
 .navbar {
   margin-bottom: 0;
+}
+
+.minicolors-theme-default .minicolors-input {
+    height: 27px;
+    width: auto;
+    display: inline-block;
+    padding-left: 26px;
 }
 
  #wrapper {
@@ -39,7 +47,7 @@
      height: 100%;
      margin-left: -250px;
      overflow-y: auto;
-     background: #000;
+     background: #222;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;
