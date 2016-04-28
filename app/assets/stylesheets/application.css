@@ -16,6 +16,11 @@
  *= require_self
  */
 
+ .color-preview {
+   width: 40px;
+   height: 20px;
+ }
+
 .navbar {
   margin-bottom: 0;
 }

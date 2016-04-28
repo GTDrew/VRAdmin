@@ -13,12 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.minicolors
+//= require best_in_place
 //= require twitter/bootstrap
-//= require turbolinks
 //= require_tree .
 
 
 $( document ).ready(function() {
+  $(".best_in_place").best_in_place();
   $('.bg-color').minicolors();
   $('.font-color').minicolors();
 });
