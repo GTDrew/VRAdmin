@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
   resources :dashboard
-  resources :apps
+
+  resources :apps do
+    resources :videos
+  end
+  
   get '/users/:id', to: 'users#show', as: 'user'
 
 end

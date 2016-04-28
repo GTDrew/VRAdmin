@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="btn-toolbar">
+    <span class="video-name"><%= video.name %></span>
+      <%= link_to 'Delete', app_video_path(@app, video),
+      method: :delete,
+      data: { confirm: 'Are you certain you want to delete this video?'},
+      class: 'btn btn-danger pull-right' %>
+
+      <%= link_to 'Edit', edit_app_video_path(@app, video), class: 'btn btn-primary pull-right' %>
+    </div>
+  </div>
+</div>

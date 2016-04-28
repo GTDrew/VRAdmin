@@ -1,4 +1,5 @@
 class AppsController < ApplicationController
+  layout "app"
 
   def index
     @app = App.all
