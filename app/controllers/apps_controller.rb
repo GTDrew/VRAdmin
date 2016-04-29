@@ -1,10 +1,6 @@
 class AppsController < ApplicationController
   layout "app"
 
-  def index
-    @app = App.all
-  end
-
   def show
     @app = App.find(params[:id])
     @user = current_user

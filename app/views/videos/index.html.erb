@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
+    <% if !@app.videos.empty? %>
     <h2>Videos <%= link_to '+ Add Video', new_app_video_path, class: 'btn btn-info pull-right sharp' %></h2>
     <p><strong>Drag &amp; Drop to reorder</strong></p>
+    <% else %>
+    <h2>Videos <%= link_to '+ Add Your First Video', new_app_video_path, class: 'btn btn-info pull-right sharp' %></h2>
+    <% end %>
   </div>
 </div>
 
@@ -10,7 +14,7 @@
     <% if @videos.any? %>
            <%= render @videos %>
        <% else %>
-       <p>No videos found <%= link_to "Add Your First Video", new_app_video_path, class:'btn sharp' %></p>
+       <h3 class="text-center">No videos found</h3>
        <% end %>
   </div>
 </div>
