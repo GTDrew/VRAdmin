@@ -16,15 +16,32 @@
 *= require_self
 */
 
+.brand {
+  background-color: #1CCB8D;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #3A3A3A;
+}
+
+.navbar-default {
+  border-color: #13885E;
+}
+
+.navbar-default .navbar-brand {
+  color: #3A3A3A;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  color: #3a3a3a;
 }
 
 .panel-default {
-    border-color: #ddd;
-    background-color: #f1f1f1;
-    cursor:move;
+  border-color: #ddd;
+  background-color: #f1f1f1;
+  cursor:move;
 }
 
 .visibility-off {
@@ -82,33 +99,33 @@ body {
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-  padding-left: 250px;
-}
+/*#wrapper.toggled {
+padding-left: 250px;
+}*/
 
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
-  left: 250px;
+  left: 0;
   width: 0;
   height: 100%;
-  margin-left: -250px;
   overflow-y: auto;
-  background: #222;
+  background: #1CCB8D;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  width: 250px;
-}
+/*#wrapper.toggled #sidebar-wrapper {
+width: 250px;
+}*/
 
 #page-content-wrapper {
   width: 100%;
   position: absolute;
   padding: 15px;
+  /*background-color: #e9fcf6;*/
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -121,21 +138,28 @@ body {
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 200px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
+  /*text-indent: 20px;*/
   line-height: 40px;
 }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: #3A3A3A;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.sidebar-nav .nav-link {
+  font-size: 24px;
+  /*padding-left: 40px;*/
 }
 
 .sidebar-nav li a:hover {
@@ -164,9 +188,40 @@ body {
   background: none;
 }
 
+.branding-sidebar {
+  background-color: #1cb2cb;
+}
+
+.videos-sidebar {
+  background-color: #cb1c5a;
+}
+
+.preview-sidebar {
+  background-color: #cb8d1c;
+}
+
+.logout-sidebar {
+  bottom: 0;
+  position: fixed;
+  width: inherit;
+}
+
+.logout-sidebar a {
+  padding: 0;
+}
+
+.social-icons {
+  padding: 0;
+}
+
+.social-icons li {
+  list-style-type: none;
+  display: inline-block;
+}
+
 @media(min-width:768px) {
   #wrapper {
-    padding-left: 250px;
+    padding-left: 200px;
   }
 
   #wrapper.toggled {
@@ -174,7 +229,7 @@ body {
   }
 
   #sidebar-wrapper {
-    width: 250px;
+    width: 200px;
   }
 
   #wrapper.toggled #sidebar-wrapper {
@@ -182,7 +237,7 @@ body {
   }
 
   #page-content-wrapper {
-    padding: 20px;
+    /*padding: 20px;*/
     position: relative;
   }
 

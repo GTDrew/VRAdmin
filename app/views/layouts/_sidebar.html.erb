@@ -1,13 +1,36 @@
 <div id="sidebar-wrapper">
-  <ul class="sidebar-nav">
-    <li>
-      <%= link_to 'Branding', app_path(@app) %>
+  <ul class="sidebar-nav text-center">
+
+    <li class="branding-sidebar">
+      <%= link_to app_path(@app) do %><i class="fa fa-pencil fa-2x" aria-hidden="true"></i><br>
+      <span class="nav-link">Branding</span>
+      <% end %>
     </li>
-    <li>
-      <%= link_to 'Videos', app_videos_path(@app) %>
+    <li class="videos-sidebar">
+      <%= link_to app_videos_path(@app) do %>
+      <i class="fa fa-play fa-2x" aria-hidden="true"></i><br>
+      <span class="nav-link">Videos</span>
+      <% end %>
     </li>
-    <li>
-      <%= link_to 'Preview', preview_app_path(@app) %>
+    <li class="preview-sidebar">
+      <%= link_to preview_app_path(@app) do %>
+      <i class="fa fa-search fa-2x" aria-hidden="true"></i><br>
+      <span class="nav-link">Preview</span>
+      <% end %>
     </li>
+
+    <li class="logout-sidebar">
+      <%= link_to destroy_user_session_path, method: :delete  do %>
+      <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><br>
+      <span class="nav-link">Logout</span>
+      <% end %>
+
+      <ul class="social-icons">
+        <li><a href="https://www.instagram.com/gramercytech/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.facebook.com/GramercyTech" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/GramercyTech" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a></li>
+      </ul>
+    </li>
+
   </ul>
 </div>

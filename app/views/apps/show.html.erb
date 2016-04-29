@@ -3,18 +3,26 @@
     <h1><%= @app.name %> <%= link_to "Edit Your App", edit_app_path, class:'btn btn-info pull-right sharp' %></h1>
   </div>
 </div>
-<div class="row text-center">
-  <div class="col-md-6">
-    <h2>Icon</h2>
+<div class="row">
+  <div class="col-md-4 text-center">
+    <h3>Splash Screen</h3>
+    <% if @app.splash_image?  %>
+    <img src="<%= @app.splash_image %>" class="img-responsive">
+    <% else %>
+    <%= image_tag(Faker::Placeholdit.image("220x368", 'jpg')) %>
+    <p class="text-center">You haven't uploaded a splash screen yet.</p>
+    <% end %>
+  </div>
+  <div class="col-md-4 text-center">
+    <h3>Icon</h3>
     <% if @app.icon?  %>
     <img src="<%= @app.icon %>" class="img-responsive">
     <% else %>
     <%= image_tag(Faker::Placeholdit.image("150x150", 'jpg')) %>
     <p class="text-center">You haven't uploaded an app icon yet.</p>
     <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2 class="text-center">Header</h2>
+
+    <h3 class="text-center">Header</h3>
     <% if @app.header_image?  %>
     <img src="<%= @app.header_image %>" class="img-responsive">
     <% else %>
@@ -22,10 +30,8 @@
     <p class="text-center">You haven't uploaded a header yet.</p>
     <% end %>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <h4>Background Color</h4>
+  <div class="col-md-4">
+    <h3>Background Color</h3>
     <% if @app.background_color?  %>
     <div class="color-preview" style="background-color: <%= @app.background_color %>"></div>
     <div><%= @app.background_color %></div>
@@ -33,7 +39,8 @@
     <div class="color-preview"></div>
     <div>N/A</div>
     <% end %>
-    <h4>Font Color</h4>
+
+    <h3>Font Color</h3>
     <% if @app.font_color?  %>
     <div class="color-preview" style="background-color: <%= @app.font_color %>"></div>
     <div><%= @app.font_color %></div>
@@ -42,13 +49,5 @@
     <div>N/A</div>
     <% end %>
   </div>
-  <div class="col-md-6 text-center">
-    <h2>Splash Screen</h2>
-    <% if @app.splash_image?  %>
-    <img src="<%= @app.splash_image %>" class="img-responsive">
-    <% else %>
-    <%= image_tag(Faker::Placeholdit.image("220x368", 'jpg')) %>
-    <p class="text-center">You haven't uploaded a splash screen yet.</p>
-    <% end %>
-  </div>
+
 </div>

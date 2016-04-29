@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+<nav class="navbar navbar-default navbar-static-top brand">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -11,6 +11,15 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
+        <li class="hidden-lg hidden-md hidden-sm">
+          <%= link_to 'Branding', app_path(@app) %>
+        </li>
+        <li class="hidden-lg hidden-md hidden-sm">
+          <%= link_to 'Videos', app_videos_path(@app) %>
+        </li>
+        <li class="hidden-lg hidden-md hidden-sm">
+          <%= link_to 'Preview', preview_app_path(@app) %>
+        </li>
         <%= render 'shared/login_logout' %>
       </ul>
     </div>
