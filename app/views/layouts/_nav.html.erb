@@ -11,15 +11,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="hidden-lg hidden-md hidden-sm">
-          <%= link_to 'Branding', app_path(@app) %>
-        </li>
-        <li class="hidden-lg hidden-md hidden-sm">
-          <%= link_to 'Videos', app_videos_path(@app) %>
-        </li>
-        <li class="hidden-lg hidden-md hidden-sm">
-          <%= link_to 'Preview', preview_app_path(@app) %>
-        </li>
+        <%= render 'shared/collapsed_links' %>
         <%= render 'shared/login_logout' %>
       </ul>
     </div>

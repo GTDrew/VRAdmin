@@ -1,5 +1,5 @@
-<% if current_user %>
-    <%= link_to "VR Admin", dashboard_index_path, class: "navbar-brand" %>
+<% if current_user && current_user.app %>
+<%= link_to "VR Admin", app_path(current_user.app), class: "navbar-brand" %>
 <% else %>
-    <%= link_to "VR Admin", root_path, class: "navbar-brand" %>
+<%= link_to "VR Admin", root_path, class: "navbar-brand" %>
 <% end %>

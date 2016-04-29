@@ -1,0 +1,11 @@
+<% if current_user && current_user.app %>
+<li class="hidden-lg hidden-md hidden-sm">
+  <%= link_to 'Branding', app_path(current_user.app) %>
+</li>
+<li class="hidden-lg hidden-md hidden-sm">
+  <%= link_to 'Videos', app_videos_path(current_user.app) %>
+</li>
+<li class="hidden-lg hidden-md hidden-sm">
+  <%= link_to 'Preview', preview_app_path(current_user.app) %>
+</li>
+<% end %>

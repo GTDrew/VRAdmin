@@ -7,6 +7,7 @@ class AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -19,9 +20,10 @@ class AppsController < ApplicationController
 
   def create
     @app = App.new(app_params)
-
+    @app.user_id = current_user.id
+    byebug
     if @app.save
-      redirect_to @app
+      redirect_to app_path(@app)
     else
       render 'new'
     end
