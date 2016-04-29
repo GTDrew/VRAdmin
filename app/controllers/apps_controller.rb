@@ -1,4 +1,5 @@
 class AppsController < ApplicationController
+  layout "app"
 
   def index
     @app = App.all
@@ -51,6 +52,10 @@ class AppsController < ApplicationController
     @app.destroy
 
     redirect_to apps_path
+  end
+
+  def preview
+    @app = App.find(params[:id])
   end
 
   private

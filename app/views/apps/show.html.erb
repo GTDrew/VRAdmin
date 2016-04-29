@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
-    <h1><%= @app.name %> <%= link_to "Edit Your App", edit_app_path, class:'btn btn-info pull-right' %></h1>
+    <h1><%= @app.name %> <%= link_to "Edit Your App", edit_app_path, class:'btn btn-info pull-right sharp' %></h1>
   </div>
 </div>
 <div class="row text-center">
@@ -25,20 +25,22 @@
 </div>
 <div class="row">
   <div class="col-md-6">
-        Background Color<br>
-        <% if @app.background_color?  %>
-        <div class="color-preview" style="background-color: <%= @app.background_color %>"></div>
-        <div><%= @app.background_color %></div>
-        <!-- <input type="text" name="bg-color" value="<%= @app.background_color %>" class="form-control font-color input-lg"><br> -->
-        <% else %>
-        <input type="text" name="bg-color" class="form-control bg-color input-lg"><br>
-        <% end %>
-        Font Color<br>
-        <% if @app.font_color?  %>
-        <input type="text" name="bg-color" value="<%= @app.font_color %>" class="form-control font-color input-lg"><br>
-        <% else %>
-        <input type="text" name="bg-color" class="form-control font-color input-lg"><br>
-        <% end %>
+    <h4>Background Color</h4>
+    <% if @app.background_color?  %>
+    <div class="color-preview" style="background-color: <%= @app.background_color %>"></div>
+    <div><%= @app.background_color %></div>
+    <% else %>
+    <div class="color-preview"></div>
+    <div>N/A</div>
+    <% end %>
+    <h4>Font Color</h4>
+    <% if @app.font_color?  %>
+    <div class="color-preview" style="background-color: <%= @app.font_color %>"></div>
+    <div><%= @app.font_color %></div>
+    <% else %>
+    <div class="color-preview"></div>
+    <div>N/A</div>
+    <% end %>
   </div>
   <div class="col-md-6 text-center">
     <h2>Splash Screen</h2>
