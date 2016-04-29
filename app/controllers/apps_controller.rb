@@ -54,6 +54,10 @@ class AppsController < ApplicationController
     redirect_to apps_path
   end
 
+  def preview
+    @app = App.find(params[:id])
+  end
+
   private
   def app_params
     params.require(:app).permit(:name, :icon, :header_image, :splash_image, :background_color, :font_color)

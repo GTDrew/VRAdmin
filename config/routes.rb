@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   resources :dashboard
 
   resources :apps do
-    resources :videos
+    get 'preview', on: :member
+    resources :videos do
+      put :sort, on: :collection
+    end
   end
-  
+
   get '/users/:id', to: 'users#show', as: 'user'
 
 end

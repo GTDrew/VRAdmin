@@ -1,15 +1,16 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h2>Videos <%= link_to '+ Add Video', new_app_video_path, class: 'btn btn-info pull-right' %></h2>
+    <h2>Videos <%= link_to '+ Add Video', new_app_video_path, class: 'btn btn-info pull-right sharp' %></h2>
+    <p><strong>Drag &amp; Drop to reorder</strong></p>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1 sortable">
     <% if @videos.any? %>
            <%= render @videos %>
        <% else %>
-       <p>No videos found <%= link_to "Add Your First Video", new_app_video_path %></p>
+       <p>No videos found <%= link_to "Add Your First Video", new_app_video_path, class:'btn sharp' %></p>
        <% end %>
   </div>
 </div>

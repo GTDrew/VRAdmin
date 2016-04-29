@@ -1,13 +1,16 @@
-<div class="panel panel-default">
+<div class="panel panel-default <%= video.visibility == false ? 'visibility-off' : '' %>" data-id="<%= video.id %>">
   <div class="panel-body">
     <div class="btn-toolbar">
-    <span class="video-name"><%= video.name %></span>
+      <span class="video-name"><i class="fa fa-bars" aria-hidden="true"></i> <%= video.name %></span>
       <%= link_to 'Delete', app_video_path(@app, video),
       method: :delete,
       data: { confirm: 'Are you certain you want to delete this video?'},
-      class: 'btn btn-danger pull-right' %>
+      class: 'btn btn-danger pull-right sharp' %>
 
-      <%= link_to 'Edit', edit_app_video_path(@app, video), class: 'btn btn-primary pull-right' %>
+      <%= link_to 'Edit', edit_app_video_path(@app, video), class: 'btn btn-primary pull-right sharp' %>
+      <% if video.visibility == false %>
+       <span class="hidden-video pull-right">HIDDEN</span>
+      <% end %>
     </div>
   </div>
 </div>

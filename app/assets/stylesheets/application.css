@@ -24,6 +24,34 @@ body {
 .panel-default {
     border-color: #ddd;
     background-color: #f1f1f1;
+    cursor:move;
+}
+
+.visibility-off {
+  background-color: #f2bebe;
+}
+
+.form-select {
+  width: 150px;
+}
+
+.hidden-video {
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.sortable-placeholder {
+  border: 1px dashed #CCC;
+  background-color: #f9f9f9;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.sortable {
+  display: list-item;
+  list-style-type: none;
 }
 
 .color-preview {
