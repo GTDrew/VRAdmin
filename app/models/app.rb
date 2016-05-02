@@ -7,4 +7,8 @@ class App < ActiveRecord::Base
     validates :font_color, length: { is: 7 }
 
     validates_presence_of :name
+
+    mount_uploader :icon, AppIconUploader
+    mount_uploader :header_image, AppHeaderUploader
+    mount_uploader :splash_image, AppSplashUploader
 end

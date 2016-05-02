@@ -14,7 +14,6 @@
 
 
 $( document ).ready(function() {
-  $(".best_in_place").best_in_place();
   $('.bg-color').minicolors();
   $('.font-color').minicolors();
 });

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
-  resources :dashboard
 
   resources :apps do
     get 'preview', on: :member

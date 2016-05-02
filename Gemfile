@@ -41,4 +41,7 @@ gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'jquery-minicolors-rails'
-gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'carrierwave'
+gem "mini_magick"
+gem 'fog'
+gem 'figaro'

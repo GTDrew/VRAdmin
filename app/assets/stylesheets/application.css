@@ -78,6 +78,10 @@ body {
   margin-right: 10px;
 }
 
+.img-responsive {
+    display: inline;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -216,6 +220,10 @@ width: 250px;
 .social-icons li {
   list-style-type: none;
   display: inline-block;
+}
+
+.social-icons li a {
+  padding: 0 10px;
 }
 
 @media(min-width:768px) {
