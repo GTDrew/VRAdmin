@@ -30,7 +30,7 @@ describe App do
     @user = FactoryGirl.build(:user)
     @user.save
     @app.user_id = @user.id
-    expect(@app.user).to eq(@user)
+    expect(@app.owner).to eq(@user)
   end
 
 end
