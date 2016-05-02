@@ -1,9 +1,11 @@
 class AppsController < ApplicationController
   layout "app"
 
+  before_action :authenticate_user!
+  before_action :require_owner
+
   def show
     @app = App.find(params[:id])
-    @user = current_user
   end
 
   def new
