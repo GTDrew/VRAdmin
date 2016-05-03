@@ -48,3 +48,4 @@ gem "mini_magick"
 gem 'fog'
 gem 'figaro'
 gem 'administrate'
+gem 'puma'
