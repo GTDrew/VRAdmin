@@ -9,7 +9,6 @@
     <% if @app.splash_image?  %>
     <img src="<%= @app.splash_image.url(:thumb) %>" class="img-responsive">
     <% else %>
-    <%= image_tag(Faker::Placeholdit.image("220x368", 'jpg')) %>
     <p class="text-center">You haven't uploaded a splash screen yet.</p>
     <% end %>
   </div>
@@ -18,7 +17,6 @@
     <% if @app.icon  %>
     <img src="<%= @app.icon.url(:thumb) %>" class="img-responsive text-center">
     <% else %>
-    <%= image_tag(Faker::Placeholdit.image("150x150", 'jpg')) %>
     <p class="text-center">You haven't uploaded an app icon yet.</p>
     <% end %>
 
@@ -26,7 +24,6 @@
     <% if @app.header_image?  %>
     <img src="<%= @app.header_image.url %>" class="img-responsive">
     <% else %>
-    <%= image_tag(Faker::Placeholdit.image("150x150", 'jpg')) %>
     <p class="text-center">You haven't uploaded a header yet.</p>
     <% end %>
   </div>
