@@ -17,7 +17,9 @@
       <div class="sensor"></div>
       <div class="speaker"></div>
       <div class="screen">
-        <!-- Content goes here -->
+        <% if @app.splash_image?  %>
+        <img src="<%= @app.splash_image.url %>" class="img-responsive preview">
+        <% end %>
       </div>
       <div class="home"></div>
       <div class="bottom-bar"></div>
@@ -47,7 +49,9 @@
   <div class="col-md-4">
 
     <h4>App Icon</h4>
-    <p>Preview Here</p>
+    <% if @app.icon  %>
+    <img src="<%= @app.icon.url(:thumb) %>" class="img-responsive text-center">
+    <% end %>
 
   </div> <!-- End Column -->
 </div>

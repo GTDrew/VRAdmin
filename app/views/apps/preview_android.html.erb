@@ -15,7 +15,9 @@
       <div class="volume"></div>
       <div class="camera"></div>
       <div class="screen">
-        <!-- Content goes here -->
+        <% if @app.splash_image?  %>
+        <img src="<%= @app.splash_image.url %>" class="img-responsive preview">
+        <% end %>
       </div>
     </div>
 
@@ -39,7 +41,9 @@
   <div class="col-md-4">
 
     <h4>App Icon</h4>
-    <p>Preview Here</p>
+    <% if @app.icon  %>
+    <img src="<%= @app.icon.url(:thumb) %>" class="img-responsive text-center">
+    <% end %>
 
   </div> <!-- End Column -->
 </div>
