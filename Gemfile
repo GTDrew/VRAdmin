@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.0'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -36,6 +36,8 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'rails_12factor', group: :production
 
 gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
