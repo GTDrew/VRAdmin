@@ -28,6 +28,7 @@ class VideosController < ApplicationController
     @video.app_id = @app.id
 
     if @video.save
+      flash[:notice] = 'Video successfully created!'
       redirect_to app_videos_path
     else
       render 'new'
@@ -38,6 +39,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     if @video.update(video_params)
+      flash[:notice] = 'Video successfully updated!'
       redirect_to app_videos_path
     else
       render 'edit'
@@ -47,7 +49,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
-
+    flash[:notice] = 'Video successfully deleted!'
     redirect_to app_videos_path
   end
 

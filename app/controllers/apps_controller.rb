@@ -21,6 +21,7 @@ class AppsController < ApplicationController
     @app.user_id = current_user.id
     byebug
     if @app.save
+      flash[:notice] = 'App successfully created!'
       redirect_to app_path(@app)
     else
       render 'new'
@@ -30,17 +31,8 @@ class AppsController < ApplicationController
   def update
     @app = App.find(params[:id])
 
-    # respond_to do |format|
-    #   if @app.update(app_params)
-    #     # format.html { redirect_to(@app, :notice => 'App was successfully updated.') }
-    #     format.json { respond_with_bip(@app) }
-    #   else
-    #     format.html { render :action => "edit" }
-    #     format.json { respond_with_bip(@app) }
-    #   end
-    # end
-
     if @app.update(app_params)
+      flash[:notice] = 'App successfully updated!'
       redirect_to @app
     else
       render 'edit'
