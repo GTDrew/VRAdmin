@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :apps do
-    get 'preview', on: :member
+
+    member do
+      get 'preview', to: 'apps#preview_iphone'
+      get 'preview/android', to: 'apps#preview_android'
+    end
+
     resources :videos do
       put :sort, on: :collection
     end

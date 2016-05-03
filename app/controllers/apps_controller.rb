@@ -46,7 +46,11 @@ class AppsController < ApplicationController
     redirect_to apps_path
   end
 
-  def preview
+  def preview_iphone
+    @app = App.find(params[:id])
+  end
+
+  def preview_android
     @app = App.find(params[:id])
   end
 
