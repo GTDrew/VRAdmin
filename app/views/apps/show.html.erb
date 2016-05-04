@@ -14,7 +14,7 @@
   </div>
   <div class="col-md-4 text-center">
     <h3>Icon</h3>
-    <% if @app.icon  %>
+    <% if @app.icon?  %>
     <img src="<%= @app.icon.url(:thumb) %>" class="img-responsive text-center">
     <% else %>
     <p class="text-center">You haven't uploaded an app icon yet.</p>

@@ -2,7 +2,7 @@ class AppsController < ApplicationController
   layout "app"
 
   before_action :authenticate_user!
-  before_action :require_owner
+  before_action :require_owner, :except => [:new, :create]
 
   def show
     @app = App.find(params[:id])
@@ -19,7 +19,7 @@ class AppsController < ApplicationController
   def create
     @app = App.new(app_params)
     @app.user_id = current_user.id
-    byebug
+
     if @app.save
       flash[:notice] = 'App successfully created!'
       redirect_to app_path(@app)

@@ -1,5 +1,7 @@
 <% if current_user && current_user.app %>
-<%= link_to "VR Admin", app_path(current_user.app), class: "navbar-brand" %>
+<%= link_to "VRtist", app_path(current_user.app), class: "navbar-brand" %>
+<% elsif current_user %>
+<%= link_to "VRtist", new_app_path, class: "navbar-brand" %>
 <% else %>
-<%= link_to "VR Admin", root_path, class: "navbar-brand" %>
+<%= link_to "VRtist", root_path, class: "navbar-brand" %>
 <% end %>
