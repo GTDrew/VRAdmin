@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: 'users/registrations' }
+
   root 'welcome#index'
 
   resources :apps do

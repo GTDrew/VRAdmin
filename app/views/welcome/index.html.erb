@@ -21,12 +21,22 @@
     <p class="headline">Build a Beautiful, Virtual Reality App in Minutes</p>
 
     <div class="row text-center welcome-buttons">
+      <% if current_user && current_user.app.present? %>
+      <div class="col-md-6 col-md-offset-3 text-center">
+          <%= link_to 'Go To App Dashboard', app_path(current_user.app), class:'btn btn-success btn-lg sharp' %>
+      </div>
+      <% elsif current_user %>
+      <div class="col-md-6 col-md-offset-3 text-center">
+          <%= link_to 'Create Your App', new_app_path, class:'btn btn-success btn-lg sharp' %>
+      </div>
+      <% else %>
       <div class="col-md-6">
         <%= link_to 'Sign Up', new_user_registration_path, class:'btn btn-success btn-lg sharp' %>
       </div>
       <div class="col-md-6">
         <%= link_to 'Log In', new_user_session_path, class:'btn btn-success btn-lg sharp' %>
       </div>
+      <% end %>
     </div>
 
   </div>

@@ -1,5 +1,13 @@
-<% if current_user && current_user.admin? %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h1>Hello, <%= current_user.first_name %>!</h1>
+    <% if current_user && current_user.admin? %>
+      <%= link_to 'Go To Admin Dashboard', admin_root_path, class: 'btn btn-success sharp' %>
+    <% elsif current_user && current_user.app %>
+    <%= link_to 'Go To App Dashboard', app_path(current_user.app), class: 'btn btn-success sharp' %>
+    <% else current_user %>
+    <%= link_to 'Create Your App', new_app_path, class: 'btn btn-success sharp' %>
+    <% end %>
 
-<% else %>
-<h1>Hello, <%= current_user.first_name %>!</h1>
-<% end %>
+  </div>
+</div>

@@ -4,3 +4,8 @@
 <li>
   <%= link_to 'Contact', '' %>
 </li>
+<% if current_user %>
+<li>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+</li>
+<% end %>
