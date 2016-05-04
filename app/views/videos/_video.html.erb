@@ -1,4 +1,4 @@
-<div class="panel panel-default <%= video.visibility == false ? 'visibility-off' : '' %>" data-id="<%= video.id %>">
+<div class="panel panel-default" data-id="<%= video.id %>">
   <div class="panel-body">
     <div class="btn-toolbar">
       <span class="video-name"><i class="fa fa-bars" aria-hidden="true"></i> <%= video.name %></span>
@@ -8,9 +8,6 @@
       class: 'btn btn-danger pull-right sharp' %>
 
       <%= link_to 'Edit', edit_app_video_path(@app, video), class: 'btn btn-primary pull-right sharp' %>
-      <% if video.visibility == false %>
-       <span class="hidden-video pull-right">HIDDEN</span>
-      <% end %>
     </div>
   </div>
 </div>
