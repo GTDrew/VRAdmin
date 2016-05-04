@@ -1,9 +1,12 @@
 require 'rails_helper'
+require 'factory_girl_rails'
 
-RSpec.describe Video, type: :model do
+describe Video do
 
   before(:each) do
     @video = FactoryGirl.build(:video)
+    @user = FactoryGirl.build(:user)
+    @app = FactoryGirl.build(:app)
   end
 
   it "has a valid factory" do

@@ -24,6 +24,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      get 'apps/:id', to: 'apps#info'
+    end
+  end
+
   get '/users/:id', to: 'users#show', as: 'user'
 
 end
