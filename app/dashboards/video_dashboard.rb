@@ -15,7 +15,6 @@ class VideoDashboard < Administrate::BaseDashboard
     thumbnail: Field::String,
     video_file: Field::String,
     format: Field::Boolean,
-    visibility: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     rank: Field::Number,
@@ -44,10 +43,9 @@ class VideoDashboard < Administrate::BaseDashboard
     :thumbnail,
     :video_file,
     :format,
-    :visibility,
     :created_at,
     :updated_at,
-    :rank,
+    :rank
   ]
 
   # FORM_ATTRIBUTES
@@ -60,8 +58,7 @@ class VideoDashboard < Administrate::BaseDashboard
     :thumbnail,
     :video_file,
     :format,
-    :visibility,
-    :rank,
+    :rank
   ]
 
   # Overwrite this method to customize how videos are displayed

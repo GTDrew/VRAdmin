@@ -50,10 +50,6 @@ body {
   cursor:move;
 }
 
-.visibility-off {
-  background-color: #f2bebe;
-}
-
 .form-select {
   width: 150px;
 }
