@@ -298,3 +298,44 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
+
+/*  SCREEN PREVIEW STYLES  */
+
+.screen-header {
+  background-color: white;
+  height: 15%;
+}
+
+.screen-footer {
+  bottom: 0;
+  position: absolute;
+}
+
+.screen-logo {
+  margin: 10px 0 0 10px;
+}
+
+.screen-app-name {
+  color: black;
+  font-size: 25px;
+}
+
+.video-preview img {
+  width: 100%;
+}
+
+.video-info {
+  margin: 10px;
+}
+
+.video-description {
+  text-align: left;
+}
+
+.preview-row {
+  width: inherit;
+}
+
+.android {
+  font-size: 20px;
+}
