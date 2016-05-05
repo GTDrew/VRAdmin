@@ -31,6 +31,7 @@ class VideosController < ApplicationController
       flash[:notice] = 'Video successfully created!'
       redirect_to app_videos_path
     else
+      flash[:error] = @video.errors.full_messages.join(', ')
       render 'new'
     end
   end
@@ -42,6 +43,7 @@ class VideosController < ApplicationController
       flash[:notice] = 'Video successfully updated!'
       redirect_to app_videos_path
     else
+      flash[:error] = @video.errors.full_messages.join(', ')
       render 'edit'
     end
   end

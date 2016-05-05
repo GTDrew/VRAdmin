@@ -71,12 +71,16 @@
         </div>
 
         <div class="video-preview">
+          <% if @video && @video.thumbnail  %>
           <img src="<%= @video.thumbnail.url(:thumb) %>" class="thumbnail-preview"><br>
+          <% end %>
         </div>
 
         <div class="video-info">
+          <% if @video %>
           <h3 class="video-name"> <%= @video.name %> </h3>
           <p class="video-description"> <%= @video.description %> </p>
+          <% end %>
         </div>
 
         <div class="row screen-footer">

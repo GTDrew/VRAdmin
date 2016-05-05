@@ -24,6 +24,7 @@ class AppsController < ApplicationController
       flash[:notice] = 'App successfully created!'
       redirect_to app_path(@app)
     else
+      flash[:error] = @app.errors.full_messages.join(', ')
       render 'new'
     end
   end
@@ -35,6 +36,7 @@ class AppsController < ApplicationController
       flash[:notice] = 'App successfully updated!'
       redirect_to @app
     else
+      flash[:error] = @app.errors.full_messages.join(', ')
       render 'edit'
     end
   end
@@ -42,7 +44,6 @@ class AppsController < ApplicationController
   def destroy
     @app = App.find(params[:id])
     @app.destroy
-
     redirect_to apps_path
   end
 
