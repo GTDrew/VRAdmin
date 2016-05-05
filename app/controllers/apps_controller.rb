@@ -59,6 +59,10 @@ class AppsController < ApplicationController
     @video = @videos.first
   end
 
+  def submit
+    @app = App.find(params[:id])
+  end
+
   private
   def app_params
     params.require(:app).permit(:name, :icon, :header_image, :splash_image, :background_color, :font_color)
