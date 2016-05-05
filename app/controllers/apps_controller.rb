@@ -48,10 +48,14 @@ class AppsController < ApplicationController
 
   def preview_iphone
     @app = App.find(params[:id])
+    @videos = @app.videos
+    @video = @videos.first
   end
 
   def preview_android
     @app = App.find(params[:id])
+    @videos = @app.videos
+    @video = @videos.first
   end
 
   private

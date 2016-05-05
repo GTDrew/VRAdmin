@@ -37,8 +37,26 @@
       <div class="camera"></div>
       <div class="sensor"></div>
       <div class="speaker"></div>
-      <div class="screen">
-        <!-- Content goes here -->
+      <div class="screen" style="background-color: <%= @app.background_color %>">
+        <div class="screen-header">
+          <img src="<%= @app.header_image.url %>" class="screen-logo pull-left"><br>
+          <p class="screen-app-name pull-left"><%= @app.name %></p>
+        </div>
+
+        <div class="video-list">
+
+          <% @videos.each do |video| %>
+          <div class="video-preview">
+            <img src="<%= video.thumbnail.url(:thumb) %>" class="thumbnail-preview"><br>
+          </div>
+          <% end %>
+
+        </div>
+
+        <div class="screen-footer">
+          <p>FOOTER CONTENT</p>
+        </div>
+
       </div>
       <div class="home"></div>
       <div class="bottom-bar"></div>
@@ -56,8 +74,55 @@
       <div class="camera"></div>
       <div class="sensor"></div>
       <div class="speaker"></div>
-      <div class="screen">
-        <!-- Content goes here -->
+      <div class="screen" style="background-color: <%= @app.background_color %>">
+        <div class="screen-header">
+          <img src="<%= @app.header_image.url %>" class="screen-logo pull-left"><br>
+          <p class="screen-app-name pull-left"><%= @app.name %></p>
+        </div>
+
+        <div class="video-preview">
+          <img src="<%= @video.thumbnail.url(:thumb) %>" class="thumbnail-preview"><br>
+        </div>
+
+        <div class="video-info">
+          <h3 class="video-name"> <%= @video.name %> </h3>
+          <p class="video-description"> <%= @video.description %> </p>
+        </div>
+
+        <div class="row screen-footer">
+          <!-- <div class="screen-footer"> -->
+            <div class="col-md-3">
+              <span class="fa-stack fa-2x">
+                <i class="fa fa-circle-o fa-stack-2x"></i>
+                <i class="fa fa-chevron-left fa-stack-1x"></i>
+              </span>
+            </div>
+
+            <div class="col-md-3">
+              <span class="fa-stack fa-3x">
+                <i class="fa fa-circle-o fa-stack-2x"></i>
+                <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
+              </span>
+            </div>
+
+            <div class="col-md-3">
+              <span class="fa-stack fa-3x">
+                <i class="fa fa-circle-o fa-stack-2x"></i>
+                <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
+              </span>
+            </div>
+
+            <div class="col-md-3">
+              <span class="fa-stack fa-2x">
+                <i class="fa fa-circle-o fa-stack-2x"></i>
+                <i class="fa fa-trash fa-stack-1x"></i>
+              </span>
+            </div>
+
+          <!-- </div> -->
+        </div>
+
+
       </div>
       <div class="home"></div>
       <div class="bottom-bar"></div>
