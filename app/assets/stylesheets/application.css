@@ -335,3 +335,7 @@ body {
 .preview-row {
   width: inherit;
 }
+
+.android {
+  font-size: 20px;
+}
