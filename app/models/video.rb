@@ -3,11 +3,11 @@ class Video < ActiveRecord::Base
 
   default_scope { order("rank ASC") }
 
-  mount_uploader :thumbnail, VideoThumbnailUploader
+  mount_uploader :image, VideoImageUploader
   mount_uploader :video_file, VideoUploader
 
   validates_presence_of :name,
                         :description,
                         :video_file,
-                        :thumbnail
+                        :image
 end

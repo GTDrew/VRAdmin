@@ -1,4 +1,4 @@
-class VideoThumbnailUploader < ImageUploader
+class VideoImageUploader < ImageUploader
 
   # process resize_to_fit: [1014, 2028]
 

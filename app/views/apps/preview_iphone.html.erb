@@ -47,7 +47,7 @@
 
           <% @videos.each do |video| %>
           <div class="video-preview">
-            <img src="<%= video.thumbnail.url(:thumb) %>" class="thumbnail-preview"><br>
+            <img src="<%= video.image.url(:thumb) %>" class="thumbnail-preview"><br>
           </div>
           <% end %>
 
@@ -81,8 +81,8 @@
         </div>
 
         <div class="video-preview">
-          <% if @video && @video.thumbnail  %>
-          <img src="<%= @video.thumbnail.url(:thumb) %>" class="thumbnail-preview"><br>
+          <% if @video && @video.image  %>
+          <img src="<%= @video.image.url(:thumb) %>" class="thumbnail-preview"><br>
           <% end %>
         </div>
 
