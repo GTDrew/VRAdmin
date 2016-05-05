@@ -1,6 +1,8 @@
 class Video < ActiveRecord::Base
   belongs_to :app
 
+  enum format: [ :stereoscopic, :monoscopic ]
+
   default_scope { order("rank ASC") }
 
   mount_uploader :image, VideoImageUploader
