@@ -17,9 +17,10 @@ class AppDashboard < Administrate::BaseDashboard
     splash_image: Field::String,
     background_color: Field::String,
     font_color: Field::String,
+    submitted: Field::Boolean,
     user_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -32,6 +33,7 @@ class AppDashboard < Administrate::BaseDashboard
     :owner,
     :videos,
     :name,
+    :submitted,
     :created_at,
     :updated_at
   ]

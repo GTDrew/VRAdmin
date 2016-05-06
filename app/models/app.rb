@@ -6,7 +6,9 @@ class App < ActiveRecord::Base
     validates :background_color, length: { is: 7 }
     validates :font_color, length: { is: 7 }
 
-    validates_presence_of :name
+    validates :name, presence: true,
+                     uniqueness: true,
+                     length: { maximum: 12 }
 
     mount_uploader :icon, AppIconUploader
     mount_uploader :header_image, AppHeaderUploader

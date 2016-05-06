@@ -10,7 +10,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-10 col-md-offset-1 sortable">
+  <div class="col-md-10 col-md-offset-1 sortable" data-app-id="<%= @app.id %>">
     <% if @videos.any? %>
            <%= render @videos %>
        <% else %>
