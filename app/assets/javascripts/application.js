@@ -16,4 +16,11 @@
 $( document ).ready(function() {
   $('.bg-color').minicolors();
   $('.font-color').minicolors();
+
+  $(".checklist input[type=checkbox]").on('click', function(){
+    $(this).closest("tr").toggleClass("success");
+    if ($('.checklist input[type=checkbox]:checked').size == $('.checklist input[type=checkbox]').size) {
+      $('#submit').removeClass('disabled')
+    }
+  });
 });

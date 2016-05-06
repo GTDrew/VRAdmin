@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     member do
       get 'preview', to: 'apps#preview_iphone'
       get 'preview/android', to: 'apps#preview_android'
+
+      get 'submit', to: 'apps#submit'
     end
 
     resources :videos do

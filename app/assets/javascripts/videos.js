@@ -19,6 +19,8 @@ ready = function(){
         // set the updated positions
         set_positions();
 
+        $appId = $('.sortable').data('app-id')
+
         // populate the updated_order array with the new task positions
         $('.panel.panel-default').each(function(i){
             updated_order.push({ id: $(this).data("id"), position: i+1 });
@@ -27,7 +29,7 @@ ready = function(){
         // send the updated order via ajax
         $.ajax({
             type: "PUT",
-            url: '/apps/:app_id/videos/sort',
+            url: "/apps/" + $appId + "/videos/sort",
             data: { order: updated_order }
         });
     });
