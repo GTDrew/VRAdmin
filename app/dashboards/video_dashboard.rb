@@ -57,7 +57,7 @@ class VideoDashboard < Administrate::BaseDashboard
     :description,
     :image,
     :video_file,
-    :format,
+    # :format,
     :rank
   ]
 
