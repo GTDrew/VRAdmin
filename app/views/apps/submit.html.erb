@@ -4,34 +4,65 @@
 
     <table class="table table-hover table-condensed checklist">
       <tr>
-        <td><input type="checkbox"></td>
-        <td>Add a Splash Screen</td>
+        <% if @app.splash_image? %>
+        <td><input type="checkbox" checked></td>
+        <% else %>
+        <td><input type="checkbox" ></td>
+        <% end %>
+        <td><%= link_to 'Add a Splash Screen', edit_app_path(@app) %></td>
       </tr>
       <tr>
+        <% if @app.icon? %>
+        <td><input type="checkbox" checked></td>
+        <% else %>
         <td><input type="checkbox"></td>
-        <td>Add an App Icon</td>
+        <% end %>
+        <td><%= link_to 'Add an App Icon', edit_app_path(@app) %></td>
       </tr>
       <tr>
+        <% if @app.header_image? %>
+        <td><input type="checkbox" checked></td>
+        <% else %>
         <td><input type="checkbox"></td>
-        <td>Add a Header Image</td>
+        <% end %>
+        <td><%= link_to 'Add a Header Image', edit_app_path(@app) %></td>
       </tr>
       <tr>
+        <% if @app.background_color? %>
+        <td><input type="checkbox" checked></td>
+        <% else %>
         <td><input type="checkbox"></td>
-        <td>Choose a Background Color</td>
+        <% end %>
+        <td><%= link_to 'Choose a Background Color', edit_app_path(@app) %></td>
       </tr>
       <tr>
+        <% if @app.font_color? %>
+        <td><input type="checkbox" checked></td>
+        <% else %>
         <td><input type="checkbox"></td>
-        <td>Choose a Font Color</td>
+        <% end %>
+        <td><%= link_to 'Choose a Font Color', edit_app_path(@app) %></td>
       </tr>
       <tr>
+        <% if !@app.videos.empty? %>
+        <td><input type="checkbox" checked></td>
+        <% else %>
         <td><input type="checkbox"></td>
-        <td>Add Videos to Your App</td>
+        <% end %>
+        <td><%= link_to 'Add Videos to Your App', new_app_video_path(@app) %></td>
       </tr>
     </table>
 
     <div class="text-center">
-      <%= link_to 'Submit App', '', class:'btn btn-success sharp disabled', id:'submit' %>
-      <%= link_to 'Download Files', app_path(format: :zip) %>
+      <% if @app.submitted? %>
+      <span class="btn btn-success btn-lg sharp disabled">App Submitted!</span>
+      <% else %>
+      <%= form_for(@app) do |f| %>
+      <%= f.hidden_field :submitted, value: true %>
+      <%= f.submit "Submit App", class: "btn btn-success sharp", id:'submit' %>
+      <% end %>
+      <% end %>
+      <!-- <%= link_to 'Submit App', '', class:'btn btn-success sharp', id:'submit' %> -->
     </div>
 
   </div>

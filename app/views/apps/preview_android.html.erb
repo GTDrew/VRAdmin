@@ -34,17 +34,16 @@
       <div class="screen" style="background-color: <%= @app.background_color %>">
         <div class="screen-header">
           <img src="<%= @app.header_image.url %>" class="screen-logo pull-left"><br>
-          <p class="screen-app-name android pull-left"><%= @app.name %></p>
         </div>
 
         <div class="video-list">
 
           <% @videos.each do |video| %>
           <div class="video-preview">
-            <img src="<%= video.image.url(:thumb) %>" class="thumbnail-preview"><br>
+            <img src="<%= video.image.url(:thumb) %>" class="thumbnail-preview">
+            <p class="video-name list-name"><%= video.name %></p>
           </div>
           <% end %>
-
         </div>
 
       </div>
@@ -63,7 +62,6 @@
       <div class="screen" style="background-color: <%= @app.background_color %>">
         <div class="screen-header">
           <img src="<%= @app.header_image.url %>" class="screen-logo pull-left"><br>
-          <p class="screen-app-name android pull-left"><%= @app.name %></p>
         </div>
 
         <div class="video-preview">
@@ -79,37 +77,35 @@
           <% end %>
         </div>
 
-        <div class="row screen-footer">
-          <!-- <div class="screen-footer"> -->
-          <div class="col-md-3">
+        <div class="screen-footer">
+          <div class="footer-icon">
             <span class="fa-stack fa-2x">
               <i class="fa fa-circle-o fa-stack-2x"></i>
               <i class="fa fa-chevron-left fa-stack-1x"></i>
             </span>
           </div>
 
-          <div class="col-md-3">
+          <div class="footer-icon">
             <span class="fa-stack fa-2x">
               <i class="fa fa-circle-o fa-stack-2x"></i>
               <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
             </span>
           </div>
 
-          <div class="col-md-3">
+          <div class="footer-icon">
             <span class="fa-stack fa-2x">
               <i class="fa fa-circle-o fa-stack-2x"></i>
               <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
             </span>
           </div>
 
-          <div class="col-md-3">
+          <div class="footer-icon">
             <span class="fa-stack fa-2x">
               <i class="fa fa-circle-o fa-stack-2x"></i>
               <i class="fa fa-trash fa-stack-1x"></i>
             </span>
           </div>
 
-          <!-- </div> -->
         </div>
 
 

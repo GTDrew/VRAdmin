@@ -17,10 +17,20 @@ $( document ).ready(function() {
   $('.bg-color').minicolors();
   $('.font-color').minicolors();
 
-  $(".checklist input[type=checkbox]").on('click', function(){
-    $(this).closest("tr").toggleClass("success");
-    if ($('.checklist input[type=checkbox]:checked').size == $('.checklist input[type=checkbox]').size) {
-      $('#submit').removeClass('disabled')
+  function readyToSubmit() {
+    var allCheckBox = $("input[type=checkbox]").size();
+    var countChecked = $('input[type=checkbox]').filter(":checked").size();
+
+    if (countChecked == allCheckBox)  {
+      $('#submit').removeClass('disabled');
+    } else {
+      $('#submit').addClass('disabled');
     }
+  }
+
+
+  $("input[type=checkbox]").on('click', function(){
+    readyToSubmit();
   });
+
 });
