@@ -8,6 +8,7 @@
       class: 'btn btn-danger pull-right sharp' %>
 
       <%= link_to 'Edit', edit_app_video_path(@app, video), class: 'btn btn-primary pull-right sharp' %>
+      <span class='pull-right'><%= number_to_human_size(video.size) %></span>
     </div>
   </div>
 </div>
