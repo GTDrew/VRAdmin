@@ -13,4 +13,15 @@ class Video < ActiveRecord::Base
                         :video_file,
                         :image
 
+  before_save :update_video_attributes
+
+  private
+
+  def update_video_attributes
+    if video_file.present? && video_file_changed?
+      self.size = video_file.file.size
+    end
+  end
+
+
 end
