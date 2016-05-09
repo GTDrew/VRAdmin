@@ -42,7 +42,7 @@ class AppDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :owner,
-    :videos,
+    # :videos,
     :id,
     :name,
     :icon,
