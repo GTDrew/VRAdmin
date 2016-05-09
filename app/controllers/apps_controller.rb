@@ -1,4 +1,7 @@
 class AppsController < ApplicationController
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   layout "app"
 
   before_action :authenticate_user!
@@ -6,6 +9,26 @@ class AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.zip do
+
+        compressed_filestream = Zip::OutputStream.write_buffer do |zos|
+
+            zos.put_next_entry "title_icon.png"
+            zos.write open(@app.header_image.url).read
+
+            zos.put_next_entry "ic_launcher.png"
+            zos.write open(@app.icon.url).read
+
+            zos.put_next_entry "splash_icon.png"
+            zos.write open(@app.splash_image.url).read
+        end
+        compressed_filestream.rewind
+        send_data compressed_filestream.read, filename: "#{@app.name}-#{@app.id}.zip"
+      end
+    end
   end
 
   def new

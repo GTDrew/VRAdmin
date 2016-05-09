@@ -35,7 +35,7 @@ class AppDashboard < Administrate::BaseDashboard
     :name,
     :submitted,
     :created_at,
-    :updated_at
+    # :updated_at
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -59,7 +59,7 @@ class AppDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :owner,
+    # :owner,
     :videos,
     :name,
     :icon,
@@ -68,6 +68,7 @@ class AppDashboard < Administrate::BaseDashboard
     :background_color,
     :font_color,
     :user_id,
+    :submitted
   ]
 
   # Overwrite this method to customize how apps are displayed

@@ -9,7 +9,8 @@ class Video < ActiveRecord::Base
   mount_uploader :video_file, VideoUploader
 
   validates_presence_of :name,
-                        :description,
-                        :video_file,
-                        :image
+  :description,
+  :video_file,
+  :image
+
 end
