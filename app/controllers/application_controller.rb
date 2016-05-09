@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def require_owner
     @app = App.find(params[:id])
-    unless current_user == @app.owner
+    unless current_user == @app.owner || current_user.admin?
       redirect_to app_path(current_user.app)
     end
   end
