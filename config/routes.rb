@@ -14,14 +14,11 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
 
   resources :apps do
-
     member do
       get 'preview', to: 'apps#preview_iphone'
       get 'preview/android', to: 'apps#preview_android'
-
       get 'submit', to: 'apps#submit'
     end
-
     resources :videos do
       put :sort, on: :collection
     end
