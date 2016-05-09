@@ -304,6 +304,10 @@ body {
 
 /*  SCREEN PREVIEW STYLES  */
 
+.screen {
+  overflow-y: scroll;
+}
+
 .screen-header {
   background-color: white;
   height: 15%;

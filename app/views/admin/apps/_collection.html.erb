@@ -60,7 +60,11 @@ to display a collection of resources in an HTML table.
           </td>
         <% end %>
 
-        <td><%= link_to 'Assets', app_path(resource, format: :zip) %></td>
+        <td>
+          <% if resource.submitted? %>
+          <%= link_to 'Assets', app_path(resource, format: :zip) %>
+          <% end %>
+        </td>
 
         <td><%= link_to(
           t("administrate.actions.edit"),
