@@ -28,6 +28,7 @@ $( document ).ready(function() {
     }
   }
 
+  readyToSubmit();
 
   $("input[type=checkbox]").on('click', function(){
     readyToSubmit();
