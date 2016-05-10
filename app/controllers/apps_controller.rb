@@ -87,7 +87,8 @@ class AppsController < ApplicationController
   end
 
   private
+  
   def app_params
-    params.require(:app).permit(:name, :icon, :header_image, :splash_image, :background_color, :font_color)
+    params.require(:app).permit(:name, :icon, :header_image, :splash_image, :background_color, :font_color, :submitted)
   end
 end
