@@ -36,6 +36,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
 
+  version :normal do
+    process :efficient_conversion
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
@@ -47,5 +51,23 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  def filename
+    "#{model.id}.png"
+  end
+
+  private
+
+  def efficient_conversion
+    manipulate! do |img|
+      img.format("png") do |c|
+        # c.fuzz        "3%"
+        # c.trim
+        # c.resize      "#{width}x#{height}>"
+        # c.resize      "#{width}x#{height}<"
+      end
+      img
+    end
+  end
 
 end
