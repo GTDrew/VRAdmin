@@ -1,72 +1,72 @@
 <div class="row">
-	<div class="col-md-6 col-md-offset-3 text-center">
-		<h1><%= @app.name %> <%= link_to "Edit Your App", edit_app_path, class:'btn btn-info pull-right sharp' %></h1>
-	</div>
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h1><%= @app.name %> <%= link_to "Edit Your App", edit_app_path, class:'btn btn-info pull-right sharp' %></h1>
+  </div>
 </div>
 
 <div class="row">
 
-	<div class="col-md-5">
-		<h3 class='text-center'>Splash Screen</h3>
-		<div class="row">
-			<div class="col-md-6">
-				<h4>Image</h4>
-				<% if @app.splash_image?  %>
-				<img src="<%= @app.splash_image.url(:thumb) %>" class="img-responsive">
-				<% else %>
-				<p class="text-center">You haven't uploaded a splash screen yet.</p>
-				<% end %>
-			</div>
+  <div class="col-md-5">
+    <h3 class='text-center'>Splash Screen</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Image</h4>
+        <% if @app.splash_image?  %>
+        <img src="<%= @app.splash_image.url(:thumb) %>" class="img-responsive">
+        <% else %>
+        <p class="text-center">You haven't uploaded a splash screen yet.</p>
+        <% end %>
+      </div>
 
-			<div class="col-md-6">
-				<h4>Color</h4>
-				<% if @app.splash_color? %>
-				<div class="color-preview" style="background-color: <%= @app.splash_color %>"></div>
-				<div><%= @app.splash_color %></div>
-				<% end %>
-			</div>
-		</div>
+      <div class="col-md-6">
+        <h4>Color</h4>
+        <% if @app.splash_color? %>
+        <div class="color-preview" style="background-color: <%= @app.splash_color %>"></div>
+        <div><%= @app.splash_color %></div>
+        <% end %>
+      </div>
+    </div>
 
-	</div>
+  </div>
 
-	<div class="col-md-3">
-		<h3>Icon</h3>
-		<% if @app.icon?  %>
-		<img src="<%= @app.icon.url(:thumb) %>" class="img-responsive text-center">
-		<% else %>
-		<p class="text-center">You haven't uploaded an app icon yet.</p>
-		<% end %>
+  <div class="col-md-3">
+    <h3>Icon</h3>
+    <% if @app.icon?  %>
+    <img src="<%= @app.icon.url(:thumb) %>" class="img-responsive text-center">
+    <% else %>
+    <p class="text-center">You haven't uploaded an app icon yet.</p>
+    <% end %>
 
-		<h3>Header</h3>
-		<% if @app.header_image?  %>
-		<img src="<%= @app.header_image.url %>" class="img-responsive">
-		<% else %>
-		<p class="text-center">You haven't uploaded a header yet.</p>
-		<% end %>
-	</div>
+    <h3>Header</h3>
+    <% if @app.header_image?  %>
+    <img src="<%= @app.header_image.url %>" class="img-responsive">
+    <% else %>
+    <p class="text-center">You haven't uploaded a header yet.</p>
+    <% end %>
+  </div>
 
-	<div class="col-md-4">
-		<h3>Background Color</h3>
-		<% if @app.background_color?  %>
-		<div class="color-preview" style="background-color: <%= @app.background_color %>"></div>
-		<div><%= @app.background_color %></div>
-		<% else %>
-		<div class="color-preview"></div>
-		<div>N/A</div>
-		<% end %>
+  <div class="col-md-4">
+    <h3>Background Color</h3>
+    <% if @app.background_color?  %>
+    <div class="color-preview" style="background-color: <%= @app.background_color %>"></div>
+    <div><%= @app.background_color %></div>
+    <% else %>
+    <div class="color-preview"></div>
+    <div>N/A</div>
+    <% end %>
 
-		<h3>Font Color</h3>
-		<% if @app.font_color?  %>
-		<div class="color-preview" style="background-color: <%= @app.font_color %>"></div>
-		<div><%= @app.font_color %></div>
-		<% else %>
-		<div class="color-preview"></div>
-		<div>N/A</div>
-		<% end %>
+    <h3>Font Color</h3>
+    <% if @app.font_color?  %>
+    <div class="color-preview" style="background-color: <%= @app.font_color %>"></div>
+    <div><%= @app.font_color %></div>
+    <% else %>
+    <div class="color-preview"></div>
+    <div>N/A</div>
+    <% end %>
 
-		<h3>Text Preview</h3>
-		<p style="background-color: <%= @app.background_color %>; color: <%= @app.font_color %>; padding: 5px;" >
-			This is what the text in your app will look like with the current background and font color selections.
-		</p>
-	</div>
+    <h3>Text Preview</h3>
+    <p style="background-color: <%= @app.background_color %>; color: <%= @app.font_color %>; padding: 5px;" >
+      This is what the text in your app will look like with the current background and font color selections.
+    </p>
+  </div>
 </div>
