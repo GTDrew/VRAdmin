@@ -12,7 +12,11 @@ class VideoUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/app/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    if Rails.env.development?
+      "uploads/development/apps/#{model.app_id}/#{mounted_as}/"
+    else
+      "uploads/production/apps/#{model.app_id}/#{mounted_as}/"
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
