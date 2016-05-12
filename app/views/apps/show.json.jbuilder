@@ -1,5 +1,5 @@
 json.set! :app do
-  json.extract! @app, :id, :name, :background_color, :font_color, :submitted, :user_id
+  json.extract! @app, :id, :name, :background_color, :font_color, :submitted, :user_id, :splash_color
 
   json.icon do
     json.url @app.icon.url
