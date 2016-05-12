@@ -17,6 +17,7 @@ class AppDashboard < Administrate::BaseDashboard
     splash_image: Field::String,
     background_color: Field::String,
     font_color: Field::String,
+    splash_color: Field::String,
     submitted: Field::Boolean,
     user_id: Field::Number,
     created_at: Field::DateTime,
@@ -66,6 +67,7 @@ class AppDashboard < Administrate::BaseDashboard
     :header_image,
     :splash_image,
     :background_color,
+    :splash_color,
     :font_color,
     :user_id,
     :submitted

@@ -16,6 +16,7 @@
 $( document ).ready(function() {
   $('.bg-color').minicolors();
   $('.font-color').minicolors();
+  $('.splash-color').minicolors();
 
   function readyToSubmit() {
     var allCheckBox = $("input[type=checkbox]").size();
