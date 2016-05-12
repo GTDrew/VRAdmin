@@ -16,14 +16,14 @@ class AppsController < ApplicationController
 
         compressed_filestream = Zip::OutputStream.write_buffer do |zos|
 
-            zos.put_next_entry "title_icon.png"
-            zos.write open(@app.header_image.url).read
+          zos.put_next_entry "title_icon.png"
+          zos.write open(@app.header_image.url).read
 
-            zos.put_next_entry "ic_launcher.png"
-            zos.write open(@app.icon.url).read
+          zos.put_next_entry "ic_launcher.png"
+          zos.write open(@app.icon.url).read
 
-            zos.put_next_entry "splash_icon.png"
-            zos.write open(@app.splash_image.url).read
+          zos.put_next_entry "splash_icon.png"
+          zos.write open(@app.splash_image.url).read
         end
         compressed_filestream.rewind
         send_data compressed_filestream.read, filename: "#{@app.name}-#{@app.id}.zip"
@@ -89,6 +89,15 @@ class AppsController < ApplicationController
   private
   
   def app_params
-    params.require(:app).permit(:name, :icon, :header_image, :splash_image, :background_color, :font_color, :submitted)
+    params.require(:app).permit(
+      :name,
+      :icon,
+      :header_image,
+      :splash_image,
+      :background_color,
+      :font_color,
+      :splash_color,
+      :submitted
+      )
   end
 end
