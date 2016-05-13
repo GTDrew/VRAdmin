@@ -259,6 +259,10 @@ GEM
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jquery-fileupload-rails (0.4.6)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      sass (>= 3.2)
     jquery-minicolors-rails (2.2.3.0)
       jquery-rails
       rails (>= 3.2.8)
@@ -452,6 +456,7 @@ DEPENDENCIES
   guard-rspec
   guard-spring
   jbuilder (~> 2.0)
+  jquery-fileupload-rails
   jquery-minicolors-rails
   jquery-rails
   launchy

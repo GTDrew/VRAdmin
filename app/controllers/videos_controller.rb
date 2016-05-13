@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   layout "app"
 
   before_action :set_app
