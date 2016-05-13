@@ -26,9 +26,8 @@ class Api::V1::AppsController < ApplicationController
 	end
 
 	def set_app
-		@app = App.find_by(code: @app_code)
-		# @app.id == params[:id].to_i ? @app : @app.name =''
-		render(json: {errors: [%{Invalid AUTH-TOKEN}]}, status: :unauthorized) and return unless @app.valid?
+		result = LoginApp.new(@app_code, params[:id].to_i)
+		render(json: {errors: [%{Invalid AUTH-TOKEN}]}, status: :unauthorized) and return unless result.valid?
+    @app = result.app
 	end
-
 end
