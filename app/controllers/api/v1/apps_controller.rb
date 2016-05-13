@@ -19,22 +19,15 @@ class Api::V1::AppsController < ApplicationController
 	end
 
 	private
- # def set_group_code
- #   @full_code = request.headers['X-GROUP-CODE']
- #   render json: {errors: [%{Header "X-GROUP-CODE" is required.}]}, status: :unauthorized if @full_code.nil?
- # end
 
- def set_app_code
- 	@app_code = request.headers['AUTH-TOKEN']
- 	render json: {errors: [%{Header "AUTH-TOKEN" is required.}]}, status: :unauthorized if @full_code.nil?
- end
+	def set_app_code
+		@app_code = request.headers['AUTH-TOKEN']
+		render json: {errors: [%{Header "AUTH-TOKEN" is required.}]}, status: :unauthorized if @app_code.nil?
+	end
 
- def set_app
- 	@app = App.find_by(code: @app_code)
-  # result = LoginGroup.new(@full_code)
-  render(json: {errors: [%{Invalid AUTH-TOKEN}]}, status: :unauthorized) and return unless @app.valid?
-  # @group = result.group
-  # @group_code = result.group_code
- end
+	def set_app
+		@app = App.find_by(code: @app_code)
+		render(json: {errors: [%{Invalid AUTH-TOKEN}]}, status: :unauthorized) and return unless @app.valid?
+	end
 
 end

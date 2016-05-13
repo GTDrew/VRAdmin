@@ -27,6 +27,7 @@ class App < ActiveRecord::Base
       generate_code
     else
       self.code = code
+      self.save
     end
   end
 
