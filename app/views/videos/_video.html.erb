@@ -3,7 +3,8 @@
     <div class="btn-toolbar">
       <span class="video-name">
         <i class="fa fa-bars" aria-hidden="true"></i> 
-        <%= video.name %> - <%= number_to_human_size(video.video_file.size) %>
+        <%= video.name %>
+        <!-- <%= video.name %> - <%= number_to_human_size(video.video_file.size) %> -->
       </span>
       <!-- <span class="video-name"><i class="fa fa-bars" aria-hidden="true"></i> <%= video.name %> <%= image_tag video.image %></span> -->
       <%= link_to 'Delete', app_video_path(@app, video),
