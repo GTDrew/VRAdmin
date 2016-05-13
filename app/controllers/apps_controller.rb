@@ -23,71 +23,74 @@ class AppsController < ApplicationController
 
      zos.put_next_entry "splash_icon.png"
      zos.write open(@app.splash_image.url).read
-    end
-    compressed_filestream.rewind
-    send_data compressed_filestream.read, filename: "#{@app.name}-#{@app.id}.zip"
+
+     zos.put_next_entry("code.txt")
+     zos.write @app.code     
    end
-  end
+   compressed_filestream.rewind
+   send_data compressed_filestream.read, filename: "#{@app.name}-#{@app.id}.zip"
  end
+end
+end
 
- def new
+def new
   @app = App.new
- end
+end
 
- def edit
+def edit
   @app = App.find(params[:id])
- end
+end
 
- def create
+def create
   @app = App.new(app_params)
   @app.user_id = current_user.id
 
   if @app.save
    flash[:notice] = 'App successfully created!'
    redirect_to app_path(@app)
-  else
+ else
    flash[:error] = @app.errors.full_messages.join(', ')
    render 'new'
-  end
  end
+end
 
- def update
+def update
   @app = App.find(params[:id])
 
   if @app.update(app_params)
    flash[:notice] = 'App successfully updated!'
    redirect_to @app
-  else
+ else
    flash[:error] = @app.errors.full_messages.join(', ')
    render 'edit'
-  end
  end
+end
 
- def destroy
+def destroy
   @app = App.find(params[:id])
   @app.destroy
   redirect_to apps_path
- end
+end
 
- def preview_iphone
+def preview_iphone
   @app = App.find(params[:id])
   @videos = @app.videos
   @video = @videos.first
- end
+end
 
- def preview_android
+def preview_android
   @app = App.find(params[:id])
   @videos = @app.videos
   @video = @videos.first
- end
+end
 
- def submit
+def submit
   @app = App.find(params[:id])
- end
+end
 
- private
- 
- def app_params
+private
+
+def app_params
   params.require(:app).permit(
    :name,
    :icon,
@@ -98,5 +101,5 @@ class AppsController < ApplicationController
    :splash_color,
    :submitted
    )
- end
+end
 end

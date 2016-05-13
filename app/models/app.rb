@@ -15,4 +15,19 @@ class App < ActiveRecord::Base
   mount_uploader :header_image, AppHeaderUploader
   mount_uploader :splash_image, AppSplashUploader
 
+  after_create :generate_code
+
+  validates :code, uniqueness: true
+  CHARS = [*'A'..'Z'] + [*0..9]
+
+  def generate_code
+    code = CHARS.sample(5).join('')
+
+    if self.class.exists?(code: code)
+      generate_code
+    else
+      self.code = code
+    end
+  end
+
 end
