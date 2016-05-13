@@ -55,9 +55,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def removed_extension
+    File.basename(original_filename,File.extname(original_filename))
+  end
 
   def filename
-    "#{model.name.underscore}.png"
+    original_filename ? "#{removed_extension}.png" : "#{model.name.underscore}.png"
   end
 
   private
