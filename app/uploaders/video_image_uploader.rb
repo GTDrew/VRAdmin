@@ -1,6 +1,10 @@
-class VideoImageUploader < ImageUploader
+class VideoImageUploader < CarrierWave::Uploader::Base
 
-  # process resize_to_fit: [1014, 2028]
+  include CarrierWave::MiniMagick
+
+  # Choose what kind of storage to use for this uploader:
+  # storage :file
+  storage :fog
 
   def store_dir
     if Rails.env.development?
@@ -12,6 +16,40 @@ class VideoImageUploader < ImageUploader
 
   version :thumb do
   	process :resize_to_fit => [420, 280]
+  end
+
+  version :normal do
+    process :efficient_conversion
+  end
+
+  # Add a white list of extensions which are allowed to be uploaded.
+  # For images you might use something like this:
+  def extension_white_list
+    %w(jpg jpeg png)
+  end
+
+  # Override the filename of the uploaded files:
+  # Avoid using model.id or version_name here, see uploader/store.rb for details.
+  # def filename
+  #   "something.jpg" if original_filename
+  # end
+  # def removed_extension
+  #   File.basename(original_filename,File.extname(original_filename))
+  # end
+
+  def filename
+    "#{model.name.underscore}.png"
+    # original_filename ? "#{removed_extension}.png" : "#{model.name.underscore}.png"
+  end
+
+  private
+
+  def efficient_conversion
+    manipulate! do |img|
+      img.format("png") do |c|
+      end
+      img
+    end
   end
 
 end
