@@ -27,6 +27,7 @@ class Api::V1::AppsController < ApplicationController
 
 	def set_app
 		@app = App.find_by(code: @app_code)
+		# @app.id == params[:id].to_i ? @app : @app.name =''
 		render(json: {errors: [%{Invalid AUTH-TOKEN}]}, status: :unauthorized) and return unless @app.valid?
 	end
 
