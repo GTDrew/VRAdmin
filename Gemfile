@@ -50,3 +50,4 @@ gem 'figaro'
 gem 'administrate'
 gem 'puma'
 gem 'rubyzip'
+gem "jquery-fileupload-rails"
