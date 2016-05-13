@@ -7,6 +7,6 @@ class LoginApp
   end
 
   def valid?
-    (@app && @app_code)
+    @app == @app_code
   end
 end
