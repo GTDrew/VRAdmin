@@ -64,8 +64,6 @@ class ImageUploader < CarrierWave::Uploader::Base
     # original_filename ? "#{removed_extension}.png" : "#{model.name.underscore}.png"
   end
 
-
-
   private
 
   def efficient_conversion
