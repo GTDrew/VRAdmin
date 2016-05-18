@@ -367,3 +367,8 @@ body {
 .footer-icon {
   display: inline-block;
 }
+
+.video-image {
+  height: 100px;
+  width: initial;
+}

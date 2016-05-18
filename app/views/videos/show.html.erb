@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-md-10">
+		<h3><%= @video.name %></h3>
+	</div>
+</div>
+
+
+<iframe 
+width="100%"
+allowfullscreen 
+frameborder="0"
+src="//storage.googleapis.com/vrview/index.html?image=//photovrse.com/examples/coral.jpg&is_stereo=<%= @video && @video.stereoscopic? %>">
+</iframe>

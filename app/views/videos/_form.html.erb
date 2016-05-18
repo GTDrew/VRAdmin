@@ -17,7 +17,13 @@
 
       <div class="form-group">
         <label for="format">Format</label><br>
-        <%= f.select(:format, [['Stereoscopic', 'stereoscopic'], ['Monoscopic', 'monoscopic']] ) %>
+        <div class="field">
+          <%= f.radio_button :format, :stereoscopic %>
+          <%= f.label :format, "Stereoscopic", :value => "stereoscopic"  %><br>
+          <%= f.radio_button :format, :monoscopic %>
+          <%= f.label :format, "Monoscopic", :value => "monoscopic" %>
+        </div>
+        <%#= f.select(:format, [['Stereoscopic', 'stereoscopic'], ['Monoscopic', 'monoscopic']] ) %>
       </div>
 
     </div>
