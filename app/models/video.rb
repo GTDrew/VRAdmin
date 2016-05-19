@@ -1,18 +1,17 @@
 class Video < ActiveRecord::Base
-	belongs_to :app
+  belongs_to :app
 
-	enum format: [ :stereoscopic, :monoscopic ]
+  enum format: [:stereoscopic, :monoscopic]
 
-	default_scope { order("rank ASC") }
+  default_scope { order('rank ASC') }
 
-	mount_uploader :image, VideoImageUploader
-	mount_uploader :video_file, VideoUploader
+  mount_uploader :image, VideoImageUploader
+  mount_uploader :video_file, VideoUploader
 
-	# validates_presence_of :name,
-	# :description,
-	# :video_file,
-	# :image
+  # validates_presence_of :name,
+  # :description,
+  # :video_file,
+  # :image
 
-	validates_presence_of :video_file
-
+  validates :video_file, presence: true
 end

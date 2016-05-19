@@ -1,0 +1,18 @@
+Documentation:
+  Enabled: false
+Rails:
+  Enabled: true
+AllCops:
+  Excludes:
+    - bin/**
+    - db/**/*
+    - db/migrate/**
+    - config/**/*
+    - config/environments/**
+    - script/**
+    - spec/rails_helper.rb
+    - app/controllers/users/**
+    - app/dashboards/**
+    - app/controllers/api/v1/apps_controller.rb
+    - Guardfile
+    - Rakefile

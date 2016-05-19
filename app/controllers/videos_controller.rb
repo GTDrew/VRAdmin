@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
-  skip_before_filter  :verify_authenticity_token
-  layout "app"
+  skip_before_action :verify_authenticity_token
+  layout 'app'
 
   before_action :set_app
 
@@ -57,16 +57,22 @@ class VideosController < ApplicationController
   end
 
   def sort
-    params[:order].each do |key,value|
-      Video.find(value[:id]).update_attribute(:rank,value[:position])
+    params[:order].each do |_key, value|
+      Video.find(value[:id]).update_attribute(:rank, value[:position])
     end
-    render :nothing => true
+    render nothing: true
   end
 
   private
 
   def video_params
-    params.require(:video).permit(:name, :description, :image, :video_file, :format, :rank)
+    params.require(:video).permit(
+      :name,
+      :description,
+      :image,
+      :video_file,
+      :format,
+      :rank
+    )
   end
-
 end

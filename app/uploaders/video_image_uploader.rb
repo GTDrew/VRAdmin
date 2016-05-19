@@ -1,5 +1,4 @@
 class VideoImageUploader < CarrierWave::Uploader::Base
-
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -15,7 +14,7 @@ class VideoImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-  	process :resize_to_fit => [420, 280]
+    process resize_to_fit: [420, 280]
   end
 
   version :normal do
@@ -28,28 +27,17 @@ class VideoImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg png)
   end
 
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
-  # def removed_extension
-  #   File.basename(original_filename,File.extname(original_filename))
-  # end
-
   def filename
     "#{model.name.underscore}.png"
-    # original_filename ? "#{removed_extension}.png" : "#{model.name.underscore}.png"
   end
 
   private
 
   def efficient_conversion
     manipulate! do |img|
-      img.format("png") do |c|
+      img.format('png') do ||
       end
       img
     end
   end
-
 end

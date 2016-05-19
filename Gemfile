@@ -40,14 +40,14 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'twitter-bootstrap-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'devise'
 gem 'jquery-minicolors-rails'
 gem 'carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
 gem 'administrate'
 gem 'puma'
 gem 'rubyzip'
-gem "jquery-fileupload-rails"
+gem 'jquery-fileupload-rails'

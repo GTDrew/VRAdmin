@@ -1,5 +1,12 @@
 json.set! :app do
-  json.extract! @app, :id, :name, :background_color, :font_color, :submitted, :user_id, :splash_color
+  json.extract! @app,
+                :id,
+                :name,
+                :background_color,
+                :font_color,
+                :submitted,
+                :user_id,
+                :splash_color
 
   json.icon do
     json.url @app.icon.url
@@ -12,7 +19,6 @@ json.set! :app do
   json.splash_image do
     json.url @app.splash_image.url
   end
-
 end
 
 json.set! :videos do
