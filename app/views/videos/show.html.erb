@@ -1,13 +1,144 @@
 <div class="row">
-	<div class="col-md-10">
-		<h3><%= @video.name %></h3>
-	</div>
+  <div class="col-md-1">
+    <%= link_to 'Back to Videos', app_videos_path, class: 'btn btn-info sharp' %>
+  </div>
+  <div class="col-md-4 col-md-offset-3">
+    <h3 class="text-center"><%= @video.name %></h3>
+  </div>
 </div>
 
+<div class="row">
+  <div class="col-md-6 text-center">
+    <h3>iPhone Preview</h3>
 
-<iframe 
-width="100%"
-allowfullscreen 
-frameborder="0"
-src="//storage.googleapis.com/vrview/index.html?image=//photovrse.com/examples/coral.jpg&is_stereo=<%= @video && @video.stereoscopic? %>">
-</iframe>
+    <div class="marvel-device iphone6 black">
+      <div class="top-bar"></div>
+      <div class="sleep"></div>
+      <div class="volume"></div>
+      <div class="camera"></div>
+      <div class="sensor"></div>
+      <div class="speaker"></div>
+      <div class="screen" style="background-color: <%= @app.background_color %>; font-color: <%= @app.font_color %>">
+        <div class="screen-header">
+          <img src="<%= @app.header_image.url %>" class="screen-logo pull-left"><br>
+        </div>
+
+        <div class="video-preview">
+          <img src="<%= @video.image.url(:thumb) %>" class="thumbnail-preview"><br>
+        </div>
+
+        <div class="video-info">
+          <h3 class="video-name"> <%= @video.name %> </h3>
+          <p class="video-description"> <%= @video.description %> </p>
+        </div>
+
+        <div class="screen-footer">
+          <div class="footer-icon">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-chevron-left fa-stack-1x"></i>
+            </span>
+          </div>
+
+          <div class="footer-icon">
+            <span class="fa-stack fa-3x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
+            </span>
+          </div>
+
+          <div class="footer-icon">
+            <span class="fa-stack fa-3x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
+            </span>
+          </div>
+
+          <div class="footer-icon">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-trash fa-stack-1x"></i>
+            </span>
+          </div>
+
+        </div>
+
+
+      </div>
+      <div class="home"></div>
+      <div class="bottom-bar"></div>
+    </div>
+
+  </div> <!-- End iPhone Preview Col -->
+
+  <div class="col-md-6 text-center">
+    <h3>Android Preview</h3>
+
+    <div class="marvel-device nexus5">
+      <div class="top-bar"></div>
+      <div class="sleep"></div>
+      <div class="volume"></div>
+      <div class="camera"></div>
+      <div class="screen" style="background-color: <%= @app.background_color %>; font-color: <%= @app.font_color %>">
+        <div class="screen-header">
+          <img src="<%= @app.header_image.url %>" class="screen-logo pull-left"><br>
+        </div>
+
+        <div class="video-preview">
+          <img src="<%= @video.image.url(:thumb) %>" class="thumbnail-preview"><br>
+        </div>
+
+        <div class="video-info">
+          <h3 class="video-name"> <%= @video.name %> </h3>
+          <p class="video-description"> <%= @video.description %> </p>
+        </div>
+
+        <div class="screen-footer">
+          <div class="footer-icon">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-chevron-left fa-stack-1x"></i>
+            </span>
+          </div>
+
+          <div class="footer-icon">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
+            </span>
+          </div>
+
+          <div class="footer-icon">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-mobile fa-rotate-90 fa-stack-1x"></i>
+            </span>
+          </div>
+
+          <div class="footer-icon">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle-o fa-stack-2x"></i>
+              <i class="fa fa-trash fa-stack-1x"></i>
+            </span>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div> <!-- End Android Preview Col -->
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3 class="text-center">Video Preview</h3>
+    <iframe 
+    width="100%"
+    allowfullscreen 
+    frameborder="0"
+    src="//storage.googleapis.com/vrview/index.html?image=//photovrse.com/examples/coral.jpg&is_stereo=<%= @video && @video.stereoscopic? %>">
+  </iframe>
+  </div>
+</div>

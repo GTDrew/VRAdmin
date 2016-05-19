@@ -40,21 +40,21 @@ class App < ActiveRecord::Base
            :validate_minimum_icon_size
 
   def validate_minimum_header_size
-    header_image = MiniMagick::Image.open(self.header_image.path)
+    header_image = MiniMagick::Image.open(self.header_image.url)
     unless header_image[:width] > 918 && header_image[:height] > 256
       errors.add :header_image, "should be 918 x 256px minimum!" 
     end
   end
 
   def validate_minimum_splash_size
-    splash_image = MiniMagick::Image.open(self.splash_image.path)
+    splash_image = MiniMagick::Image.open(self.splash_image.url)
     unless splash_image[:width] > 1920 && splash_image[:height] > 1080
       errors.add :splash_image, "should be 1920 x 1080px minimum!" 
     end
   end
 
   def validate_minimum_icon_size
-    icon = MiniMagick::Image.open(self.icon.path)
+    icon = MiniMagick::Image.open(self.icon.url)
     unless icon[:width] > 512 && icon[:height] > 512
       errors.add :icon, "should be 512 x 512px minimum!" 
     end
