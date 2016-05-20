@@ -13,6 +13,11 @@ module Admin
     #   Video.find_by!(slug: param)
     # end
 
+    def show
+      super
+      @video = Video.find(params[:id])
+    end
+
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
   end
