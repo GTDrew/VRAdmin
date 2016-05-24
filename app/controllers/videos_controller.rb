@@ -24,16 +24,48 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
   end
 
+  # def create
+  #   @video = Video.new(video_params)
+  #   @video.app_id = @app.id
+
+  #   if @video.save
+  #     flash[:notice] = 'Video successfully created!'
+  #     redirect_to app_videos_path
+  #   else
+  #     flash[:error] = @video.errors.full_messages.join(', ')
+  #     render 'new'
+  #   end
+  #  end
+
+  # def create
+  #   @video = Video.new(video_create_params)
+  #   @video.app_id = @app.id
+
+  #   if @video.save
+  #     respond_to do |format|
+  #       format.json { render json: [@video.to_jq_upload].to_json }
+  #     end
+  #   else
+  #     render json: [{ error: 'custom_failure' }], status: 304
+  #   end
+  # end
+
   def create
-    @video = Video.new(video_params)
+    @video = Video.new(video_create_params)
     @video.app_id = @app.id
 
-    if @video.save
-      flash[:notice] = 'Video successfully created!'
-      redirect_to app_videos_path
-    else
-      flash[:error] = @video.errors.full_messages.join(', ')
-      render 'new'
+    respond_to do |format|
+      if @video.save
+        format.json { render json: { files: [@video.to_jq_upload] },
+                             status: :created,
+                             location: @video
+        }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @video.errors,
+                             status: :unprocessable_entity
+        }
+      end
     end
   end
 
@@ -64,6 +96,10 @@ class VideosController < ApplicationController
   end
 
   private
+
+  def video_create_params
+    params.require(:video).permit(:video_file)
+  end
 
   def video_params
     params.require(:video).permit(

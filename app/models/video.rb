@@ -14,4 +14,12 @@ class Video < ActiveRecord::Base
   # :image
 
   validates :video_file, presence: true
+
+  def to_jq_upload
+    {
+      'name' => read_attribute(:video_file),
+      'size' => video_file.size,
+      'url' => video_file.url
+    }
+  end
 end

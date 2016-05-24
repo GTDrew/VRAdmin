@@ -1,65 +1,47 @@
-<!-- <link href="http://hayageek.github.io/jQuery-Upload-File/4.0.10/uploadfile.css" rel="stylesheet">
-  <script src="http://hayageek.github.io/jQuery-Upload-File/4.0.10/jquery.uploadfile.min.js"></script> -->
+<div class="row">
+  <%= form_for [@app, @video] do |f| %>
+  <div class="col-md-4 col-md-offset-2">
+    <div class="form-group">
+      <label for="video-name">Video Name</label>
+      <%= f.text_field :name, autofocus: true, id:'video-name', class: 'form-control' %>
+    </div>
 
+    <div class="form-group">
+      <label for="video-description">Video Description</label>
+      <%= f.text_area :description, id:'video-description', class: 'form-control' %>
+    </div>
 
+    <div class="form-group">
+      <label for="format">Format</label><br>
+      <div class="field">
+        <%= f.radio_button :format, :stereoscopic %>
+        <%= f.label :format, "Stereoscopic", :value => "stereoscopic"  %><br>
+        <%= f.radio_button :format, :monoscopic %>
+        <%= f.label :format, "Monoscopic", :value => "monoscopic" %>
+      </div>
+      <%#= f.select(:format, [['Stereoscopic', 'stereoscopic'], ['Monoscopic', 'monoscopic']] ) %>
+    </div>
+
+  </div>
+
+  <div class="col-md-4 col-md-offset-1">
+    <p>Video Image</p>
+    <p>Please make sure the image's ratio is 3:2 (w:h). If if is not this ratio, the image will be stretched to match that ratio.
+      <%= f.file_field :image, class: "form-control" %>
+
+      <p>Video Upload - <b>Must be .mp4</b></p>
+
+      <div id="fileuploader">
+        <%= f.file_field :video_file, class: "form-control" %>
+      </div>
+
+    </div>
+  </div>
   <div class="row">
-    <%= form_for [@app, @video] do |f| %>
-    <div class="col-md-4 col-md-offset-2">
-      <div class="form-group">
-        <label for="video-name">Video Name</label>
-        <%= f.text_field :name, autofocus: true, id:'video-name', class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <label for="video-description">Video Description</label>
-        <%= f.text_area :description, id:'video-description', class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <label for="format">Format</label><br>
-        <div class="field">
-          <%= f.radio_button :format, :stereoscopic %>
-          <%= f.label :format, "Stereoscopic", :value => "stereoscopic"  %><br>
-          <%= f.radio_button :format, :monoscopic %>
-          <%= f.label :format, "Monoscopic", :value => "monoscopic" %>
-        </div>
-        <%#= f.select(:format, [['Stereoscopic', 'stereoscopic'], ['Monoscopic', 'monoscopic']] ) %>
-      </div>
-
-    </div>
-
-    <div class="col-md-4 col-md-offset-1">
-      <p>Video Image</p>
-      <p>Please make sure the image's ratio is 3:2 (w:h). If if is not this ratio, the image will be stretched to match that ratio.
-        <%= f.file_field :image, class: "form-control" %>
-
-        <p>Video Upload - <b>Must be .mp4</b></p>
-
-        <div id="fileuploader">
-          <%= f.file_field :video_file, class: "form-control" %>
-        </div>
-
+    <div class="col-md-4 col-md-offset-4">
+      <div class="text-center">
+        <%= f.submit class: 'btn btn-success sharp' %>
+        <% end %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <div class="text-center">
-          <%= f.submit class: 'btn btn-success sharp' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-<!-- 
-  <div id="fileuploader"></div>
-
-  <script>
-  $(document).ready(function()
-  {
-    $("#fileuploader").uploadFile({
-      url: '<%= app_videos_path(@app) %>',
-      fileName:"myfile"
-    });
-  });
-  </script>
- -->
+  </div>

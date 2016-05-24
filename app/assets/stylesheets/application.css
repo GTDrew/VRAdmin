@@ -372,3 +372,11 @@ body {
   height: 50px;
   width: initial;
 }
+
+.modal {
+  background: white;
+  top: 15%;
+  left: 15%;
+  right: 15%;
+  height: 80%;
+}
